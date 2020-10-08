@@ -1,7 +1,6 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import King from '../../assets/Animation/Laughing King.json'
 import CastleDragon from '../../assets/Animation/Castle Dragon.json'
 
 import {ConstructionText,ConstructionContainer} from './styles';
