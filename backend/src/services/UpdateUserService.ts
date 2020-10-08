@@ -20,7 +20,7 @@ class UpdateUserService {
     email,
   }: Request): Promise<User> {
     const userRepository = getRepository(User);
-    const user = await userRepository.findOne({ where: [{ id }] });
+    const actualUserInfo = await userRepository.findOne({ where: [{ id }] });
 
     const checkUserExistence = await userRepository.findOne({
       where: [{ username }],
@@ -31,8 +31,10 @@ class UpdateUserService {
     });
 
     if (
-      (checkEmailExistence && user?.email !== checkEmailExistence.email) ||
-      (checkUserExistence && user?.username !== checkUserExistence.email)
+      (checkEmailExistence &&
+        actualUserInfo?.email !== checkEmailExistence.email) ||
+      (checkUserExistence &&
+        actualUserInfo?.username !== checkUserExistence.email)
     ) {
       throw new Error('User/Email already exists');
     }
