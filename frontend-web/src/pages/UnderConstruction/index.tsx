@@ -1,29 +1,28 @@
 import React from 'react';
 import Lottie from 'react-lottie';
 
-import CastleDragon from '../../assets/Animation/Castle Dragon.json'
+import CastleDragon from '../../assets/Animation/Castle Dragon.json';
 
-import {ConstructionText,ConstructionContainer} from './styles';
+import { ConstructionText, ConstructionContainer } from './styles';
 
 const UnderConstruction = () => {
-
   const defaultOptions = {
     loop: true,
-    autoplay: true, 
+    autoplay: true,
     animationData: CastleDragon,
     rendererSettings: {
-      preserveAspectRatio: 'xMidYMid slice'
-    }
+      preserveAspectRatio: 'xMidYMid slice',
+    },
   };
 
-  return(
+  return (
     <ConstructionContainer>
-      <Lottie 
+      <Lottie
         options={defaultOptions}
         height={600}
         width={800}
         style={
-          {'position': 'absolute'}
+          { position: 'absolute' }
         }
       />
       <ConstructionText>
@@ -32,7 +31,7 @@ const UnderConstruction = () => {
         <p>under construction</p>
       </ConstructionText>
     </ConstructionContainer>
-  )
-}
+  );
+};
 
 export default UnderConstruction;
